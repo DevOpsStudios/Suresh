@@ -23,4 +23,5 @@ jobs:
     steps:
       - name: Display Inputs
         run: |
-          echo "👤 Hi"
+          echo "👤 Hello, ${{ github.event.inputs.username }}!"
+          echo "🌍 Environment selected: ${{ github.event.inputs.environment }}"
