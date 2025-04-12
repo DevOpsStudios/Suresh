@@ -1,0 +1,26 @@
+name: Manual Workflow with Input
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'Enter your name'
+        required: true
+        default: 'GitHub User'
+      environment:
+        description: 'Choose environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  run-with-input:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display Inputs
+        run: |
+          echo "👤 Hi"
